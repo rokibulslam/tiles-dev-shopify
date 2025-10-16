@@ -1,0 +1,4 @@
+{% assign sqft_per_box = product.metafields.custom.sqft_per_box | default: 5.38 %}
+{% assign price = product.selected_or_first_available_variant.price | divided_by: 100.0 %}
+
+<strong>${{ price }}</strong> per box ({{ sqft_per_box }} sqft)

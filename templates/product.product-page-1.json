@@ -111,18 +111,18 @@
                   "type": "text",
                   "name": "Product title",
                   "settings": {
-                    "text": "<p><strong>Tiles Ship in 2-5 business days</strong></p>",
-                    "width": "100%",
+                    "text": "<p><strong>TILES SHIP IN 2-5 BUSINESS DAYS</strong></p>",
+                    "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-primary--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "loose",
+                    "letter_spacing": "loose",
+                    "case": "uppercase",
+                    "wrap": "balance",
+                    "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -141,14 +141,14 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "paragraph",
+                    "type_preset": "custom",
                     "font": "var(--font-primary--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
+                    "font_size": "1.25rem",
+                    "line_height": "loose",
+                    "letter_spacing": "loose",
+                    "case": "uppercase",
                     "wrap": "pretty",
-                    "color": "",
+                    "color": "var(--color-foreground)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -159,17 +159,25 @@
                   },
                   "blocks": {}
                 },
+                "price_per_box": {
+                  "type": "custom-liquid",
+                  "name": "Price per box",
+                  "settings": {
+                    "custom_liquid": "{% render 'price-per-box' %}"
+                  },
+                  "blocks": {}
+                },
                 "price_tVjtKg": {
                   "type": "price",
                   "settings": {
                     "show_sale_price_first": true,
                     "show_installments": false,
                     "show_tax_info": false,
-                    "type_preset": "paragraph",
+                    "type_preset": "custom",
                     "width": "100%",
                     "alignment": "left",
                     "font": "var(--font-body--family)",
-                    "font_size": "1rem",
+                    "font_size": "1.125rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -185,6 +193,7 @@
               "block_order": [
                 "text_fP89Mh",
                 "text_xrnftG",
+                "price_per_box",
                 "price_tVjtKg"
               ]
             },
@@ -204,12 +213,19 @@
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
-                "show_swatches": false,
+                "show_swatches": true,
                 "alignment": "left",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "sqft_calculator": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'sqft-calculator' %}"
               },
               "blocks": {}
             },
@@ -415,6 +431,7 @@
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
+            "sqft_calculator",
             "buy_buttons_eYQEYi",
             "text_aEtTtq",
             "product_recommendations_jPHwbx"
@@ -427,7 +444,7 @@
         "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
-        "color_scheme": "",
+        "color_scheme": "scheme-6",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
